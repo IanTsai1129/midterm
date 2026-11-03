@@ -472,8 +472,8 @@ footer{
 
 .about-photo{
     display: block;           /* 手機版顯示大頭照 */
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
     margin: 0 auto 40px;
