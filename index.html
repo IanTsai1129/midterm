@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+<head><!--設定頁面基本資訊+外部連結-->
+<meta charset="utf-8">
+<meta name="viewport" content=" width=device-width, initial-scale=1.0 ">
+<title>HAU's Portfolio</title>
+<link href="css/midterm.css" rel="stylesheet" type="text/css">
+</head>
+
+<body><!--瀏覽器看得見的內容-->
+
+<!-- 漸層背景 -->
+<div class="top">
+
+    <!--header-->
+    <header>
+        <div class="menu">
+            <!--logo-->
+            <div class="logo">
+                <a href="index.html">
+                <img src="images/logo.png">
+                </a>
+            </div>
+            <!--nav-->
+            <nav>
+                <a href="#about">ABOUT</a>
+                <a href="#project">PROJECT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!--hero-->
+    <div class="hero">
+        <!--左：文字-->
+        <div class="hero-text">
+            <p>Hi !</p>
+            <h1>I'm <span class="name">Ian</span> <span class="fullname">( Hau En Tsai ) .</span></h1>
+        </div>
+        <!--中：大頭照-->
+        <div class="hero-photo">
+            <img src="images/profile.png">
+        </div>
+        <!--右：作品類別-->
+        <div class="hero-tags">
+            <p>/ Branding</p>
+            <p>/ Visual Identity</p>
+            <p>/ Digital Product</p>
+            <p>/ UI/UX Design</p>
+            <p>/ Interactive Experience</p>
+        </div>
+    </div>
+
+</div>
+
+<!--marquee-->
+<div class="marquee">
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <span>/ Branding</span>
+            <span>/ Visual Identity</span>
+            <span>/ Digital Product</span>
+            <span>/ UI/UX Design</span>
+            <span>/ Interactive Experience</span>
+            <span>/ Branding</span>
+            <span>/ Visual Identity</span>
+            <span>/ Digital Product</span>
+            <span>/ UI/UX Design</span>
+            <span>/ Interactive Experience</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+            <span>/ Branding</span>
+            <span>/ Visual Identity</span>
+            <span>/ Digital Product</span>
+            <span>/ UI/UX Design</span>
+            <span>/ Interactive Experience</span>
+            <span>/ Branding</span>
+            <span>/ Visual Identity</span>
+            <span>/ Digital Product</span>
+            <span>/ UI/UX Design</span>
+            <span>/ Interactive Experience</span>
+        </div>
+    </div>
+</div>
+
+<!--about section-->
+<section id="about" class="about">
+    <!--手機版才顯示的大頭照-->
+    <img class="about-photo" src="images/profile.png">
+    <h2>/ About</h2>
+    <p>I'm a design student from Taiwan working across Branding, UI/UX, and Interactive Experiences, shaping ideas into identities people can see and use.</p>
+</section>
+
+<!--project section-->
+<section id="project">
+    <h2>/ Project</h2>
+
+    <!--card：作品 1，連到內頁-->
+    <div class="card">
+        <a href="work1.html">
+        <img src="images/work1-cover.jpg">
+        <div class="card-text">
+            <h3><img src="images/work1-title.png" alt="Feel the Bong"></h3>
+            <p>/ Branding ． / Visual Identity</p>
+        </div>
+        </a>
+    </div>
+
+    <!--card：作品 2～6，還沒做內頁，先用 # 佔位-->
+    <div class="card">
+        <a href="#">
+        <img src="images/work2-cover.jpg">
+        <div class="card-text">
+            <h3><img src="images/work2-title.png" alt="Muu"></h3>
+            <p>/ Coming soon</p>
+        </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="#">
+        <img src="images/work-placeholder.jpg">
+        <div class="card-text">
+            <h3>Project 03</h3>
+            <p>/ Coming soon</p>
+        </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="#">
+        <img src="images/work-placeholder.jpg">
+        <div class="card-text">
+            <h3>Project 04</h3>
+            <p>/ Coming soon</p>
+        </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="#">
+        <img src="images/work-placeholder.jpg">
+        <div class="card-text">
+            <h3>Project 05</h3>
+            <p>/ Coming soon</p>
+        </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="#">
+        <img src="images/work-placeholder.jpg">
+        <div class="card-text">
+            <h3>Project 06</h3>
+            <p>/ Coming soon</p>
+        </div>
+        </a>
+    </div>
+</section>
+
+<!--footer：也是 CONTACT 的目的地-->
+<footer id="contact">
+    <h2>/ Contact</h2>
+    <p>Email | iantsai1129@gmail.com </p>
+    <p>Phone | +886 953-470-956 </p>
+    
+    
+    <p class="copyright">&copy; All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

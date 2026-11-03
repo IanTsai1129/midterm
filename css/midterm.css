@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+    background: #ffffff;
+    font-family: "Outfit", "Noto Sans TC", sans-serif;
+}
+
+.work-page{
+    background: #202020;
+    color: #ffffff;     
+}
+
+h1, h2, h3{
+    font-weight: 500;
+    margin: 0;
+}
+
+h2{
+    color: #8fa5ea;
+    font-size: 2rem;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #666666;          
+    display: inline-block;
+}
+
+.work-page nav a{
+    color: #bbbbbb;      
+}
+
+/* 圖片寬度不會超出容器 */
+img{
+    max-width: 100%;
+}
+
+
+/*header*/
+.menu{
+    width: 80%;
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;     /* logo 和 nav 垂直置中對齊 */
+}
+
+/*logo*/
+.logo{
+    flex: 0 0 160px;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+/*nav*/
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav a{
+    margin-left: 32px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover{
+    color: #8fa5ea;
+}
+
+
+/*漸層背景：從深灰漸變到藍紫*/
+.top{
+    background: linear-gradient(to bottom, #ffffff 20%, #8fa5ea 100%);
+}
+
+
+/*hero：三欄*/
+.hero{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0 160px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text,
+.hero-photo,
+.hero-tags{
+    flex: 1;                  /* 三欄平分 */
+    color: #ffffff;
+    text-shadow: 2px 2px 6px #46599268;
+}
+
+.hero-text{
+    padding-left: 60px;     /* ← 往右移 */
+}
+
+.hero-tags{
+    padding-left: 10px;     /* ← 往右移 */
+}
+
+.hero-text p{
+    font-size: 3rem;
+}
+
+.hero-text h1{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.hero-text .name{
+    padding-left: 15px;
+    font-size: 3rem;
+}
+
+.hero-text .fullname{
+    padding-left: 10px;
+    font-size: 1.1rem;
+}
+
+.hero-photo img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.hero-tags{
+    padding-left: 60px;
+    font-size: 1.15rem;
+    line-height: 2.2;
+}
+
+
+/*marquee*/
+.marquee{
+    overflow: hidden;      
+    background: #c9d3f5;
+    color: #8fa5ea;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 4px 0;
+}
+
+.marquee-track{
+    display: flex;
+    width: max-content;  
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-content{
+    flex-shrink: 0;
+    display: flex;
+}
+
+.marquee-content span{
+    padding-right: 40px;
+    white-space: nowrap;      /* 不換行 */
+}
+
+
+@keyframes marquee{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+
+/*section*/
+section{
+    width: 80%;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+section h2{
+    flex: 0 0 100%;    
+    margin-bottom: 28px;
+}
+
+
+/*about*/
+.about{
+    flex-wrap: nowrap;
+}
+
+.about h2{
+    flex: 0 0 30%;
+    margin-bottom: 0;
+}
+
+.about p{
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+/* 手機版才出現的大頭照，電腦版先藏起來 */
+.about-photo{
+    display: none;
+}
+
+
+/*card*/
+.card{
+    flex: 0 0 calc((100% - 12px * 2) / 3);   /* 扣掉 2 個間距再分 3 份 */
+    position: relative;  
+    overflow: hidden;
+}
+
+.card a{
+    display: block;
+}
+
+/* a > img：只選 a 底下「直接的」img，也就是封面；標準字在 .card-text 裡，不會被選到 */
+.card a > img{
+    display: block;
+    width: 100%;
+    height: 250px;            /* 封面（縮圖框）的高度 */
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+/* 作品名稱 */
+.card-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.card-text h3{
+    color: #ffffff;
+    height: 50px;             /* 每張卡片的標題框一樣高 */
+    display: flex;
+    align-items: center;      /* 標準字在框裡垂直置中 */
+    margin-bottom: 8px;
+}
+
+.card-text p{
+    font-size: 0.85rem;
+    color: #c9d3f5;
+}
+
+
+/* 卡片上的標準字 */
+.card-text h3 img{
+    display: block;
+    width: 35%;               /* 標準字的大小 */
+}
+
+.card:hover a > img{
+    transform: scale(1.05);   /* 圖片微微放大 */
+}
+
+.card:hover .card-text{
+    opacity: 1;
+}
+
+
+/*footer*/
+footer{
+    width: 80%;
+    margin: auto;
+    margin-top: 160px;
+    padding-bottom: 60px;
+}
+
+footer h2{
+    margin-bottom: 16px;
+}
+
+.copyright{
+    margin-top: 60px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+
+/* ===== 以下是內頁 work1.html 用的 ===== */
+
+/*work-hero*/
+.work-hero{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    color: #ffffff;
+}
+
+/* > img：只選 work-hero「直接的」img，也就是背景大圖；標準字在 h1 裡，不會被選到 */
+.work-hero > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.work-hero h1{
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+    width: 25%;               /* 標準字的寬度 */
+}
+
+.work-hero h1 img{
+    display: block;
+    width: 100%;
+}
+
+
+
+/*article*/
+article{
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    padding: 0 10%;           /* 左右各留 10% 的空白 */
+    box-sizing: border-box;   
+}
+
+/* 偶數個 article 左右對調 */
+article:nth-of-type(2n){
+    flex-direction: row-reverse;
+}
+
+.a_left{
+    flex: 0 0 40%;
+}
+
+.a_left img{
+    display: block;
+    width: 90%;
+}
+
+/* 只有第二個 article：圖片欄位加寬 */
+article:nth-of-type(2) .a_left{
+    flex: 0 0 50%;            /* 其他是 40% */
+}
+
+
+.a_right{
+    flex: 1;
+}
+
+.a_right h3{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #8fa5ea;
+}
+
+.a_right p{
+    margin-bottom: 16px;
+}
+
+/*gallery：可以左右滑動的照片列*/
+.gallery{
+    flex: 0 0 100%;           /* 自己佔一整行 */
+    display: flex;            /* 照片橫排（預設不換行） */
+    gap: 12px;
+    overflow-x: auto;         /* 超出寬度的部分可以左右捲動 */
+    scroll-snap-type: x mandatory;   /* 滑動停下來時，自動對齊到某一張照片 */
+    padding-bottom: 12px;     /* 給捲軸一點空間 */
+
+    /* 捲軸樣式：細的、深色（第一個是拖拉的那條，第二個是底軌） */
+    scrollbar-width: thin;
+    scrollbar-color: #555555 transparent;
+}
+
+.photo{
+    flex: 0 0 400px;          /* 每張固定 400px 寬，不縮小 */
+    scroll-snap-align: start; /* 對齊時以照片的左邊為準 */
+}
+
+.photo img{
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/*回到作品列表*/
+.back{
+    margin-top: 60px;
+    color: #8fa5ea;
+}
+
+.back:hover{
+    text-decoration: underline;
+}
+
+
+/*for mobile*/
+@media only screen and (max-width: 768px) {
+
+/*header*/
+.menu{
+    width: 85%;
+    padding: 24px 0;
+    flex-direction: column;
+}
+
+.logo{
+    flex: 0 0 auto;
+    width: 120px;
+}
+
+nav{         
+    text-align: center;
+    margin-top: 16px;
+}
+
+nav a{
+    margin: 0 12px;
+    font-size: 0.8rem;
+}
+
+/*hero：只留文字*/
+
+.hero{
+    width: 100%;
+    padding: 80px 0 60px;
+}
+
+.hero-photo,
+.hero-tags{
+    display: none;
+}
+
+
+
+
+/*section、footer 變寬一點，手機畫面才不會太擠*/
+section,
+footer{
+    width: 85%;
+    margin-top: 80px;
+}
+
+/*about：改成上下排*/
+.about{
+    flex-direction: column;
+}
+
+.about h2{
+    margin-bottom: 16px;
+}
+
+.about-photo{
+    display: block;           /* 手機版顯示大頭照 */
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+}
+
+/*card：每排 1 個*/
+.card{
+    flex: 0 0 100%;
+}
+
+.card a > img{
+    height: 200px;
+}
+
+.card-text{
+    opacity: 1;               /* 手機沒有滑鼠 hover，直接顯示作品名稱 */
+}
+
+/*work-hero*/
+.work-hero{
+    height: 40vh;
+}
+
+.work-hero > img{
+    object-position: 90% center;   /* 橫向 70%、縱向置中 */
+}
+
+.work-hero h1{
+    bottom: 30%;
+    left: 50%;
+    width: 50%;
+    transform: translateX(-50%);   /* 往左拉回自己寬度的一半 */
+}
+
+
+
+/*article：改成上下排（奇數、偶數都一樣）*/
+article,
+article:nth-of-type(2n){
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 60px;
+    padding: 0;               /* 手機版不留空白 */
+}
+
+.a_left{
+    flex: 0 0 auto;
+    width: 80%;
+}
+
+/* 手機版第二個 article：圖片欄位滿寬 */
+article:nth-of-type(2) .a_left{
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/*photo*/
+.photo{
+    flex: 0 0 80%;
+}
+
+.photo img{
+    height: 240px;
+}
+
+}
